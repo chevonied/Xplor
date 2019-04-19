@@ -1,4 +1,4 @@
-== README
+# README
 
 **This project uses ruby version 2.4.0 and rails 4.2.11**
 

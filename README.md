@@ -13,6 +13,8 @@ rails new Xplor -T
 cd Xplor
 
 bundle install --without production
+
+bin/rake db:migrate
 <br><br>
 **To run server, use:**
 

@@ -15,7 +15,7 @@ rails new Xplor -T
 
 cd Xplor
 
-bundle install \-\-without production
+bundle install --without production
 
 # to run server
 

@@ -1,6 +1,5 @@
 # README
 
-**This project uses ruby version 2.4.0 and rails 4.2.11**
 
 **To Set Up Xplor, open a Blank Template on Cloud9 (NOT a Rails Template), then run the following commands:**
 

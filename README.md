@@ -18,4 +18,5 @@ bundle install --without production
 
 
 **To run server, use:**
+
 rails s -p $PORT -b $IP

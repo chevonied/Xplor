@@ -52,5 +52,8 @@ group :development, :test do
   gem 'debugger2'
 end
 
-# devise
+# Devise
 gem 'devise'
+
+# Bootstrap
+gem 'bootstrap', '~> 4.3.1'

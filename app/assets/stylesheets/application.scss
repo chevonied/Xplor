@@ -14,3 +14,52 @@
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+.nav {
+    background: #EF7B45;
+}
+
+.nav-link {
+    color: #FFF;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #7dd1ff;
+}
+
+.container {
+  box-shadow: 0 0 0 10px #fff;
+  background-color: #fff;
+  line-height: 2.2;
+  width: 27em;
+  length: 37em;
+  border-radius: 30px;
+  padding: 5px;
+  border: 1em solid #EF7B45;
+  position: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7em;
+}
+
+.col-sm-12 {
+    text-align: center;
+}
+
+.btn {
+    width: 16em;
+    padding-bottom: 0.6em;
+    font-weight: bold;
+    border: 10px black;
+    background-color: #EF7B45;
+    color: white;
+    font-size: 20px;
+    position: center;
+}
+
+.btn:hover {
+    color: #7dd1ff;
+}
+
+

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="site-description">
+    <div class="col-sm-12 text-xs-center bootstrap-welcome">
+      <h1>Xplor</h1>
+      <p class="lead">Find the right place for you today!</p>
+         <%= link_to 'Rent', rental_options_path(@rental_options_path), :class => "btn" %>
+         <p></p>
+         <%= link_to 'Sublease', sublease_options_path(@rental_options_path), :class => "btn" %>
+       </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background: url('/assets/background1-sky.png') no-repeat center center fixed;
+  }
+</style>

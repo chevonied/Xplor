@@ -20,7 +20,7 @@ bin/rake db:migrate
 
 rails s -p $PORT -b $IP
 <br><br>
-**To run cucumber Tests for Homepage and About Page**
+**To run Cucumber Tests for Homepage and About Page, use:**
 
 cucumber features/homepage_exists.feature
 

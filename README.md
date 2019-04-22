@@ -19,3 +19,9 @@ bin/rake db:migrate
 **To run server, use:**
 
 rails s -p $PORT -b $IP
+<br><br>
+**To run cucumber Tests for Homepage and About Page**
+
+cucumber features/homepage_exists.feature
+
+cucumber features/about_exists.feature

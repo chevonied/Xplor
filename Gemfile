@@ -57,3 +57,15 @@ gem 'devise'
 
 # Bootstrap
 gem 'bootstrap', '~> 4.3.1'
+
+# cucumber tests
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'rspec-rails'
+end
+
+# cucumber tests isolating tests by having clean db between each test
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
+end

@@ -18,9 +18,13 @@ bundle install --without production
 
 bin/rake db:migrate
 <br><br>
-**To run server, use:**
+**To run server on Cloud9, use:**
 
 rails s -p $PORT -b $IP
+<br><br>
+**To run server on regular PC environment, use:**
+
+rails server
 <br><br>
 **To run Cucumber Tests for Homepage and About Page, use:**
 

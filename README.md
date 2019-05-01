@@ -2,6 +2,7 @@
 
 ## BUILD INSTRUCTIONS
 
+
 **Create a Blank Template if building on Cloud9 (NOT a Rails Template), then run the following commands:**
 <br><br>
 gem install rails -v 4.2.11
@@ -17,15 +18,17 @@ cd Xplor
 bundle install --without production
 
 bin/rake db:migrate
-<br><br>
+
+
 **To run server on Cloud9, use:**
 
 rails s -p $PORT -b $IP
-<br><br>
+
 **To run server on regular PC environment, use:**
 
 rails server
-<br><br>
+
+
 **To run Cucumber Tests for Homepage and About Page, use:**
 
 cucumber features/homepage_exists.feature

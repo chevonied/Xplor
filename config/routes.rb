@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  
+  authenticated :user do
+    root 'users#show', :as => :authenticated_root
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -11,13 +16,14 @@ Rails.application.routes.draw do
   get 'rental_options' => 'pages#rental_options', as: 'rental_options'
   get 'sublease_options' => 'pages#sublease_options', as: 'sublease_options'
   get 'feedback' => 'pages#feedback', as: 'feedback'
+  get 'show' => 'posts#show', as: 'show'
   
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :posts
+  resources :pages, :users
 
   # Example resource route with options:
   #   resources :products do

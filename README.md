@@ -1,6 +1,8 @@
 # README
 
-**To Set Up Xplor, open a Blank Template on Cloud9 (NOT a Rails Template), then run the following commands:**
+## BUILD INSTRUCTIONS
+
+**Create a Blank Template if building on Cloud9 (NOT a Rails Template), then run the following commands:**
 <br><br>
 gem install rails -v 4.2.11
 

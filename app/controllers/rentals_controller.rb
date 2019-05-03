@@ -1,11 +1,16 @@
 class RentalsController < ApplicationController
   before_action :set_rental, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
+  load_and_authorize_resource
 
   # GET /rentals
   # GET /rentals.json
   def index
     @rentals = Rental.all
+  end
+  
+  def priv_r_index
+    @rentals = current_user.rentals
   end
 
   # GET /rentals/1
@@ -27,6 +32,7 @@ class RentalsController < ApplicationController
   def create
     @rental = Rental.new(rental_params)
     @rental.user = current_user
+    @rental.user_id = current_user.id
     respond_to do |format|
       if @rental.save
         format.html { redirect_to @rental, notice: 'Rental was successfully created.' }
@@ -38,8 +44,8 @@ class RentalsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /rentals/1
-  # PATCH/PUT /rentals/1.json
+  # PATCH/PUT /rentals/1 
+  # PATCH/PUT /rentals/1.json 
   def update
     respond_to do |format|
       if @rental.update(rental_params)
@@ -68,7 +74,7 @@ class RentalsController < ApplicationController
       @rental = Rental.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # Never trust parameters from the scary internet, only ckd allow the white list through.
     def rental_params
       params.require(:rental).permit(:r_title, :r_description, :r_num_occupants, :r_address, :r_state, :r_city, :r_zip)
     end

@@ -1,9 +1,9 @@
 <h2>Hi, <%= current_user.email.split('@')[0] %>! Welcome to Xplor!</h2>
 
-<h3><%= link_to "View Your Rentals", rentals_path %></h3>
+<h3><%= link_to "View My Rentals", priv_r_index_path %></h3>
 
-<h3><%= link_to "View Your Subleases", subleases_path %></h3>
+<h3><%= link_to "View My Subleases", priv_s_index_path %></h3>
 
-<h3><%= link_to "View Community Rentals", subleases_path %></h3>
+<h3><%= link_to "View All Rentals", rentals_path %></h3>
 
-<h3><%= link_to "View Community Subleases", subleases_path %></h3>
+<h3><%= link_to "View All Subleases", subleases_path %></h3>

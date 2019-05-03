@@ -35,8 +35,10 @@
 
 <p>
   <strong>User:</strong>
-  <%= @sublease.user.email.split("@")[0] %>
+  <%= @sublease.user.username %>
 </p>
 
-<%= link_to 'Edit', edit_sublease_path(@sublease) %> |
+<% if can? :update, @sublease %>
+  <%= link_to 'Edit', edit_sublease_path(@sublease) %> |
+<% end %>
 <%= link_to 'Back', subleases_path %>

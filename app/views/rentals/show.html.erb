@@ -35,8 +35,10 @@
 
 <p>
   <strong>User:</strong>
-  <%= @rental.user.email.split('@')[0] %>
+  <%= @rental.user.username%>
 </p>
 
-<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<% if can? :update, @rental %>
+  <%= link_to 'Edit', edit_rental_path(@rental) %> |
+<% end %>
 <%= link_to 'Back', rentals_path %>

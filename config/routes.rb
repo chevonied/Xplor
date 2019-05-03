@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get 'feedback' => 'pages#feedback', as: 'feedback'
   get 'show' => 'posts#show', as: 'show'
   
+  get 'priv_r_index' => 'rentals#priv_r_index', as: 'priv_r_index'
+  get 'priv_s_index' => 'subleases#priv_s_index', as: 'priv_s_index'
+  
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

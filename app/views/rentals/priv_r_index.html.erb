@@ -1,4 +1,4 @@
-<h1>Listing Rentals</h1>
+<h1>My Rentals</h1>
 
 <table>
   <thead>
@@ -17,6 +17,7 @@
 
   <tbody>
     <% @rentals.each do |rental| %>
+      <% if can? :update, rental %>
       <tr>
         <td><%= rental.r_title %></td>
         <td><%= rental.r_description %></td>
@@ -27,13 +28,10 @@
         <td><%= rental.r_zip %></td>
         <td><%= rental.user.username %></td>
         <td><%= link_to 'Show', rental %></td>
-          <% if can? :update, rental %>
-            <td><%= link_to 'Edit', edit_rental_path(rental) %></td>
-          <% end %>
-          <% if can? :destroy, rental %>
-            <td><%= link_to 'Delete', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <% end %>
+        <td><%= link_to 'Edit', edit_rental_path(rental) %></td>
+        <td><%= link_to 'Delete', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

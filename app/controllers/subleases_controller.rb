@@ -1,11 +1,16 @@
 class SubleasesController < ApplicationController
   before_action :set_sublease, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:show, :index]
+  load_and_authorize_resource
 
   # GET /subleases
   # GET /subleases.json
   def index
     @subleases = Sublease.all
+  end
+  
+  def priv_s_index
+    @subleases = current_user.subleases
   end
 
   # GET /subleases/1
@@ -27,6 +32,7 @@ class SubleasesController < ApplicationController
   def create
     @sublease = Sublease.new(sublease_params)
     @sublease.user = current_user
+    @sublease.user_id = current_user.id
     respond_to do |format|
       if @sublease.save
         format.html { redirect_to @sublease, notice: 'Sublease was successfully created.' }

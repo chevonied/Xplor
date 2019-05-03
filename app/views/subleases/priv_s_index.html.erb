@@ -16,6 +16,7 @@
 
   <tbody>
     <% @subleases.each do |sublease| %>
+      <% if can? :update, sublease %>
       <tr>
         <td><%= sublease.s_title %></td>
         <td><%= sublease.s_description %></td>
@@ -25,13 +26,10 @@
         <td><%= sublease.s_city %></td>
         <td><%= sublease.s_zip %></td>
         <td><%= link_to 'Show', sublease %></td>
-        <% if can? :update, sublease %>
-          <td><%= link_to 'Edit', edit_sublease_path(sublease) %></td>
-        <% end %>
-        <% if can? :destroy, sublease %>
-          <td><%= link_to 'Delete', sublease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
+        <td><%= link_to 'Edit', edit_sublease_path(sublease) %></td>
+        <td><%= link_to 'Delete', sublease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>

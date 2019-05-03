@@ -1,0 +1,42 @@
+<p>
+  <strong>Sublease Title:</strong>
+  <%= @sublease.s_title %>
+</p>
+
+<p>
+  <strong>Sublease Description:</strong>
+  <%= @sublease.s_description %>
+</p>
+
+<p>
+  <strong>Num. Subleasers:</strong>
+  <%= @sublease.s_num_occupants %>
+</p>
+
+<p>
+  <strong>Sublease Address:</strong>
+  <%= @sublease.s_address %>
+</p>
+
+<p>
+  <strong>Sublease State:</strong>
+  <%= @sublease.s_state %>
+</p>
+
+<p>
+  <strong>Sublease City:</strong>
+  <%= @sublease.s_city %>
+</p>
+
+<p>
+  <strong>Sublease Zip Code:</strong>
+  <%= @sublease.s_zip %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sublease.user.email.split("@")[0] %>
+</p>
+
+<%= link_to 'Edit', edit_sublease_path(@sublease) %> |
+<%= link_to 'Back', subleases_path %>

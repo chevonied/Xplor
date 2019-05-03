@@ -1,0 +1,42 @@
+<p>
+  <strong>Rental Title:</strong>
+  <%= @rental.r_title %>
+</p>
+
+<p>
+  <strong>Rental Description:</strong>
+  <%= @rental.r_description %>
+</p>
+
+<p>
+  <strong>Num Occupants:</strong>
+  <%= @rental.r_num_occupants %>
+</p>
+
+<p>
+  <strong>Rental Address:</strong>
+  <%= @rental.r_address %>
+</p>
+
+<p>
+  <strong>Rental State:</strong>
+  <%= @rental.r_state %>
+</p>
+
+<p>
+  <strong>Rental City:</strong>
+  <%= @rental.r_city %>
+</p>
+
+<p>
+  <strong>Rental Zip Code:</strong>
+  <%= @rental.r_zip %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @rental.user.email.split('@')[0] %>
+</p>
+
+<%= link_to 'Edit', edit_rental_path(@rental) %> |
+<%= link_to 'Back', rentals_path %>

@@ -1,0 +1,45 @@
+<%= form_for(@rental) do |f| %>
+  <% if @rental.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rental.errors.count, "error") %> prohibited this rental from being saved:</h2>
+
+      <ul>
+      <% @rental.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :r_title, "Rental Title" %><br>
+    <%= f.text_field :r_title %>
+  </div>
+  <div class="field">
+    <%= f.label :r_description, "Rental Description" %><br>
+    <%= f.text_area :r_description %>
+  </div>
+  <div class="field">
+    <%= f.label :r_num_occupants, "Number of Occupants" %><br>
+    <%= f.number_field :r_num_occupants %>
+  </div>
+  <div class="field">
+    <%= f.label :r_address, "Rental Address" %><br>
+    <%= f.text_field :r_address %>
+  </div>
+  <div class="field">
+    <%= f.label :r_state, "Rental State" %><br>
+    <%= f.text_field :r_state %>
+  </div>
+  <div class="field">
+    <%= f.label :r_city, "Rental City" %><br>
+    <%= f.text_field :r_city %>
+  </div>
+  <div class="field">
+    <%= f.label :r_zip, "Rental Zip Code" %><br>
+    <%= f.text_field :r_zip %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

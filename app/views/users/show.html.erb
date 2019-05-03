@@ -1,1 +1,9 @@
-<h2>Hi, <%= @user.email %>! Welcome to Xplor!</h2>
+<h2>Hi, <%= current_user.email.split('@')[0] %>! Welcome to Xplor!</h2>
+
+<h3><%= link_to "View Your Rentals", rentals_path %></h3>
+
+<h3><%= link_to "View Your Subleases", subleases_path %></h3>
+
+<h3><%= link_to "View Community Rentals", subleases_path %></h3>
+
+<h3><%= link_to "View Community Subleases", subleases_path %></h3>

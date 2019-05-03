@@ -1,0 +1,45 @@
+<%= form_for(@sublease) do |f| %>
+  <% if @sublease.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sublease.errors.count, "error") %> prohibited this sublease from being saved:</h2>
+
+      <ul>
+      <% @sublease.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :s_title, "Sublease Title" %><br>
+    <%= f.text_field :s_title %>
+  </div>
+  <div class="field">
+    <%= f.label :s_description, "Sublease Description" %><br> 
+    <%= f.text_area :s_description %>
+  </div>
+  <div class="field">
+    <%= f.label :s_num_occupants, "Num. Subleasers" %><br>
+    <%= f.number_field :s_num_occupants %>
+  </div>
+  <div class="field">
+    <%= f.label :s_address, "Sublease Address" %><br>
+    <%= f.text_field :s_address %>
+  </div>
+  <div class="field">
+    <%= f.label :s_state, "Sublease State" %><br>
+    <%= f.text_field :s_state %>
+  </div>
+  <div class="field">
+    <%= f.label :s_city, "Sublease City" %><br>
+    <%= f.text_field :s_city %>
+  </div>
+  <div class="field">
+    <%= f.label :s_zip, "Sublease Zip Code" %><br>
+    <%= f.text_field :s_zip %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

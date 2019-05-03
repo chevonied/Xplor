@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190502224147) do
+ActiveRecord::Schema.define(version: 20190503010420) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
@@ -19,6 +19,36 @@ ActiveRecord::Schema.define(version: 20190502224147) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "rentals", force: :cascade do |t|
+    t.string   "r_title"
+    t.text     "r_description"
+    t.integer  "r_num_occupants"
+    t.string   "r_address"
+    t.string   "r_state"
+    t.string   "r_city"
+    t.string   "r_zip"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "rentals", ["user_id"], name: "index_rentals_on_user_id"
+
+  create_table "subleases", force: :cascade do |t|
+    t.string   "s_title"
+    t.text     "s_description"
+    t.integer  "s_num_occupants"
+    t.string   "s_address"
+    t.string   "s_state"
+    t.string   "s_city"
+    t.string   "s_zip"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "subleases", ["user_id"], name: "index_subleases_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

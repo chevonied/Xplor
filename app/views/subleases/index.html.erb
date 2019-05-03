@@ -1,0 +1,39 @@
+<h1>Listing Subleases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sublease Title</th>
+      <th>Sublease Description</th>
+      <th>Num. Subleasers</th>
+      <th>Sublease Address</th>
+      <th>Sublease State</th>
+      <th>Sublease City</th>
+      <th>Sublease Zip Code</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subleases.each do |sublease| %>
+      <tr>
+        <td><%= sublease.s_title %></td>
+        <td><%= sublease.s_description %></td>
+        <td><%= sublease.s_num_occupants %></td>
+        <td><%= sublease.s_address %></td>
+        <td><%= sublease.s_state %></td>
+        <td><%= sublease.s_city %></td>
+        <td><%= sublease.s_zip %></td>
+        <td><%= link_to 'Show', sublease %></td>
+        <% if current_user %>
+          <td><%= link_to 'Edit', edit_sublease_path(sublease) %></td>
+          <td><%= link_to 'Destroy', sublease, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sublease', new_sublease_path %>

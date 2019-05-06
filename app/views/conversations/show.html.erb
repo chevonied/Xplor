@@ -1,0 +1,10 @@
+<h2><%= @conversation.subject %></h2>
+
+<!--Convos have eceipt not messages that we need to loop through-->
+<% @conversation.receipts_for(current_user).each do |receipt| %>
+    <div>
+        <div><strong><%= receipt.message.sender.username %></strong> said:<div>
+        <div><%= receipt.message.body %></div>
+    </div>
+<% end %>
+    

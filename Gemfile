@@ -72,3 +72,6 @@ end
 
 # cancancan
 gem 'cancancan'
+
+# mailboxer for user chats
+gem 'mailboxer'

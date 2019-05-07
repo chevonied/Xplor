@@ -1,10 +1,21 @@
 <h2><%= @conversation.subject %></h2>
 
-<!--Convos have eceipt not messages that we need to loop through-->
+<!--Convos have receipt, not messages that need to be looped through. Receipts for prevents duplicates-->
 <% @conversation.receipts_for(current_user).each do |receipt| %>
     <div>
         <div><strong><%= receipt.message.sender.username %></strong> said:<div>
         <div><%= receipt.message.body %></div>
     </div>
 <% end %>
+
+<!-- due to the way mailbox is made, message body cannot be made into activerecod object so it must be handled with the form-->
+<%= form_tag conversation_messages_path(@conversation), method: :post do %>
+    <!-- things typed here should be posted to messages path-->
+    <div class="msg_body">
+        <%= text_area_tag :body %>
+    </div>
+    <%= submit_tag %>
+<% end %>
+
+<%= link_to 'Move to trash', conversation_messages_path(@conversation), method: :destroy %>
     

@@ -13,5 +13,9 @@ class User < ActiveRecord::Base
   def username
     return self.email.split('@')[0]
   end
-
+  
+  # causes error without this line. Ensure that model has the object to identify the resource
+  def mailboxer_email(object)
+  end
+  
 end

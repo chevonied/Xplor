@@ -23,8 +23,9 @@ class ConversationsController < ApplicationController
         redirect_to conversations_path(receipt.conversation)
     end
     
-    def destroy
-        conversation = current_user.mailbox.conversations.find(params[:id])
-        current_user.trash(conversation)
-    end
+    # still buggy
+    # def destroy
+    #     @conversation = current_user.mailbox.conversations.find(params[:conversation_id])
+    #     conversation.destroy_all
+    # end
 end

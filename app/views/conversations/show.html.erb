@@ -14,8 +14,6 @@
     <div class="msg_body">
         <%= text_area_tag :body %>
     </div>
-    <%= submit_tag %>
+    <%= submit_tag "Send Message" %>
 <% end %>
 
-<%= link_to 'Move to trash', conversation_messages_path(@conversation), method: :destroy %>
-    

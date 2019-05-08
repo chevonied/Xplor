@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :subleases
   resources :rentals
+  resources :feedbacks, only: [:new, :create] # we only need these two since we could always email back sender
   devise_for :users
   
   authenticated :user do

@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="site-description">
+    <div class="col-sm-12 text-xs-center form-feedback">
+      <h1 id="title">Feedback</h1>
+      <p class="lead">We'd love to hear from you!</p>
+      
+      <%= form_for @feedback do |f| %>
+          <%= f.label :name %><br>
+          <%= f.text_field :name, required: true %><br>
+          
+          <%= f.label :email %><br>
+          <%= f.email_field :email, required: true %><br>
+          
+          <%= f.label :message %><br>
+          <%= f.text_area :message, as: :text, required: true %><br>
+          
+          <div class="botcatcher">
+              <%= f.label :botcatcher %><br>
+              <%= f.text_field :botcatcher %>
+          </div>
+          
+          <%= f.submit "Send Feedback", class: "button" %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
+
+<style>
+  body {
+    background: url('/assets/background1-sky.png') no-repeat center center fixed;
+  }
+</style>
+

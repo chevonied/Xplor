@@ -75,3 +75,6 @@ gem 'cancancan'
 
 # mailboxer for user chats
 gem 'mailboxer'
+
+# mail form for contact form
+gem 'mail_form', '~> 1.5.1'

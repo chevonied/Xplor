@@ -11,6 +11,7 @@
       <th>Sublease State</th>
       <th>Sublease City</th>
       <th>Sublease Zip Code</th>
+      <th>Username<Code></Code></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= sublease.s_state %></td>
         <td><%= sublease.s_city %></td>
         <td><%= sublease.s_zip %></td>
+        <td><%= sublease.user.username %></td>
         <td><%= link_to 'Show', sublease %></td>
         <% if can? :update, sublease %>
           <td><%= link_to 'Edit', edit_sublease_path(sublease) %></td>

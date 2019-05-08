@@ -76,13 +76,10 @@ gem 'cancancan'
 # mailboxer for user chats
 gem 'mailboxer'
 
-<<<<<<< HEAD
 # paperclip for image uploads
 gem "paperclip", "~> 4.2"
 
 # mini magick for image processing
 gem 'mini_magick', '4.8.0'
-=======
 # mail form for contact form
 gem 'mail_form', '~> 1.5.1'
->>>>>>> feedbackForm

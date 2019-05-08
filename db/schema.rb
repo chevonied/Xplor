@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190506060324) do
+ActiveRecord::Schema.define(version: 20190508083817) do
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"
@@ -85,8 +85,12 @@ ActiveRecord::Schema.define(version: 20190506060324) do
     t.string   "r_city"
     t.string   "r_zip"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "rentals", ["user_id"], name: "index_rentals_on_user_id"
@@ -100,8 +104,12 @@ ActiveRecord::Schema.define(version: 20190506060324) do
     t.string   "s_city"
     t.string   "s_zip"
     t.integer  "user_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "subleases", ["user_id"], name: "index_subleases_on_user_id"

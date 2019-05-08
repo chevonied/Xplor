@@ -76,6 +76,6 @@ class SubleasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sublease_params
-      params.require(:sublease).permit(:s_title, :s_description, :s_num_occupants, :s_address, :s_state, :s_city, :s_zip)
+      params.require(:sublease).permit(:image, :s_title, :s_description, :s_num_occupants, :s_address, :s_state, :s_city, :s_zip)
     end
 end

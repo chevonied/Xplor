@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Sublease Image</th>
       <th>Sublease Title</th>
       <th>Sublease Description</th>
       <th>Num. Subleasers</th>
@@ -18,6 +19,7 @@
     <% @subleases.each do |sublease| %>
       <tr>
         <td><%= sublease.s_title %></td>
+        <td><%= image_tag sublease.image.url(:thumb) %></td>
         <td><%= sublease.s_description %></td>
         <td><%= sublease.s_num_occupants %></td>
         <td><%= sublease.s_address %></td>

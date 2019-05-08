@@ -70,8 +70,14 @@ group :test do
   gem 'database_cleaner'
 end
 
-# cancancan
+# cancancan for authorization
 gem 'cancancan'
 
 # mailboxer for user chats
 gem 'mailboxer'
+
+# paperclip for image uploads
+gem "paperclip", "~> 4.2"
+
+# mini magick for image processing
+gem 'mini_magick', '4.8.0'

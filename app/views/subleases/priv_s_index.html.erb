@@ -1,5 +1,13 @@
 <h1>Listing Subleases</h1>
 
+<div class="btn-group" id="toolbar" role="group" aria-label="Basic example">
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "My Rentals", priv_r_index_path %></button>
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "My Subleases", priv_s_index_path %></button>
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "All Rentals", rentals_path %></button>
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "All Subleases", subleases_path %></button>
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "My Messages", conversations_path %></button>
+</div>  
+
 <table>
   <thead>
     <tr>
@@ -19,6 +27,7 @@
       <% if can? :update, sublease %>
       <tr>
         <td><%= sublease.s_title %></td>
+        <td><%= image_tag sublease.image.url(:thumb) %></td>
         <td><%= sublease.s_description %></td>
         <td><%= sublease.s_num_occupants %></td>
         <td><%= sublease.s_address %></td>

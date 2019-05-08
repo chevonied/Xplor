@@ -4,6 +4,10 @@
 <br/><br/>
 **Create a Blank Template if building on Cloud9 (NOT a Rails Template), then run the following commands:**
 
+sudo apt-get update
+
+sudo apt-get install imagemagick
+
 gem install rails -v 4.2.11
 
 git clone https://github.com/chevonied/Xplor
@@ -18,6 +22,8 @@ bundle install --without production
 
 bin/rake db:migrate
 <br/><br/>
+
+**If app/assets/stylesheets/application.css and application.css.scss are both present, delete application.css to view custom styling.**
 
 **To run server on Cloud9, use:**
 

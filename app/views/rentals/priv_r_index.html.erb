@@ -1,9 +1,18 @@
 <h1>My Rentals</h1>
 
+<div class="btn-group" id="toolbar" role="group" aria-label="Basic example">
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "My Rentals", priv_r_index_path %></button>
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "My Subleases", priv_s_index_path %></button>
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "All Rentals", rentals_path %></button>
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "All Subleases", subleases_path %></button>
+  <button type="button" id="toolbar-btn" class="btn btn-secondary"><%= link_to "My Messages", conversations_path %></button>
+</div>  
+
 <table>
   <thead>
     <tr>
       <th>Rental Title</th>
+      <th>Rental Image</th>
       <th>Rental Description</th>
       <th>Num. Occupants</th>
       <th>Rental Address</th>
@@ -20,6 +29,7 @@
       <% if can? :update, rental %>
       <tr>
         <td><%= rental.r_title %></td>
+        <td><%= image_tag rental.image.url(:thumb) %></td>
         <td><%= rental.r_description %></td>
         <td><%= rental.r_num_occupants %></td>
         <td><%= rental.r_address %></td>
